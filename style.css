@@ -1,0 +1,382 @@
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f7f9fb;
+  color: #2c2c2c;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Glassmorphism Navbar */
+.navbar {
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  padding: 15px 40px;
+  border-radius: 50px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-link {
+  font-weight: 600;
+  color: #2c2c2c;
+  text-decoration: none;
+  position: relative;
+  padding: 8px 0;
+  transition: color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #4e342e;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #4e342e;
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f3f5;
+  padding: 0 20px;
+  position: relative;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(241, 243, 245, 0.9);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+  text-align: left;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.main-title {
+  font-weight: 700;
+  font-family: 'Georgia', serif;
+}
+
+.subname {
+  display: block;
+  font-size: 1.8rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #4e342e;
+}
+
+/* Section Headings */
+.section h2 {
+  text-align: center;
+  color: #2c2c2c;
+  font-size: 2.2rem;
+  font-weight: 700;
+  font-family: 'Georgia', serif;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.section h2::after {
+  content: '';
+  width: 60px;
+  height: 3px;
+  background: #4e342e;
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* Consult Now Button */
+.cta-button {
+  margin-top: 40px;
+  padding: 14px 32px;
+  background: transparent;
+  color: #4e342e;
+  border: 2px solid #4e342e;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s;
+}
+
+.cta-button span {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0%;
+  background: #4e342e;
+  z-index: 1;
+  transition: height 0.4s ease;
+}
+
+.cta-button:hover {
+  color: #fff;
+}
+
+.cta-button:hover::before {
+  height: 100%;
+}
+
+/* Content Box */
+.content-box {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* About Section Cards */
+.elements-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.element-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  width: 220px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.element-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.element-card i {
+  font-size: 2rem;
+  color: #4e342e;
+  margin-bottom: 12px;
+}
+
+/* Admin Info */
+.admin-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.admin-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  width: 250px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  word-break: break-word;
+}
+
+.admin-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.admin-card p {
+  font-size: 1rem;
+  color: #555;
+  overflow-wrap: break-word;
+}
+
+/* Connect Section - Professional Look */
+.connect-section {
+  background: #fff;
+  padding: 100px 20px;
+}
+
+.section-description {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 50px;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.professional-form {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border 0.3s;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #4e342e;
+  box-shadow: 0 0 0 3px rgba(78, 52, 46, 0.1);
+}
+
+.submit-btn {
+  background: #4e342e;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background: #3b2923;
+}
+
+.form-feedback {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #27ae60;
+}
+
+/* Footer */
+footer {
+  background: #2c2c2c;
+  color: #fff;
+  padding: 25px 0;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .professional-form {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .professional-form {
+    padding: 20px;
+  }
+}
+
+/* Name reveal */
+
+/* Blur Reveal for Subname */
+.subname {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateY(20px);
+  transition: all 1s ease;
+}
+
+.subname.visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+/* Section Scroll Reveal */
+.section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.section.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
