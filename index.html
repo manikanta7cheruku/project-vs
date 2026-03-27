@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vastu Consultancy by Cheruku Laxmipathi - Professional Vastu services for homes, businesses, and land.">
+  <title>Vastu Consultancy | Cheruku Laxmipathi</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Your CSS via Flask static folder -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  <!-- Your JS with defer to load after content -->
+  <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+  
+  <link rel="stylesheet" href="style.css">
+  <script>
+  window.__VISISTO__ = {
+    site: "sk_3c6246db7c4f0a33be774aa497fbb522238c29750806858a",
+    api: "https://api.visisto.com"
+  };
+</script>
+<script
+  src="https://cdn.visisto.com/loader.js"
+  data-site="sk_3c6246db7c4f0a33be774aa497fbb522238c29750806858a"
+  data-api="https://api.visisto.com"
+  defer
+></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <nav class="nav-container" role="navigation" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+       <!--<li><a href="#admin-info" class="nav-link"></a></li>--> 
+        <li><a href="#about-vastu" class="nav-link">About</a></li>
+        <!-- <li><a href="#admin-info" class="nav-link"></a></li> -->
+        <li><a href="#connect" class="nav-link">Connect</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section id="home" class="hero-section full-section">
+      <div class="hero-content">
+        <h1 class="fade-in">
+          <span class="title-container">
+            <span class="main-title">Vastu Consultancy</span>
+            <span class="subname">******* **********</span>
+          </span>
+        </h1>
+        <button class="cta-button fade-in delay-2" onclick="scrollToSection('connect')">
+          <span>Consult Now</span>
+        </button>
+      </div>
+    </section>
+
+    <div class="section-spacer"></div>
+
+    <!-- About Section -->
+    <section id="about-vastu" class="section fade-up">
+      <div class="content-box">
+        <h2>About Vastu</h2>
+        <div class="about-content">
+          <p>Vastu Shastra, the ancient science of architecture, is based on balancing five core elements to harmonize living spaces.</p>
+
+          <!-- Elements as Dramatic Cards -->
+          <div class="elements-cards">
+            <div class="element-card">
+              <i class="fas fa-mountain"></i>
+              <h3>Earth (Prithvi)</h3>
+              <p>Represents stability and foundation of structures.</p>
+            </div>
+            <div class="element-card">
+              <i class="fas fa-water"></i>
+              <h3>Water (Jal)</h3>
+              <p>Symbolizes flow, adaptability, and purification.</p>
+            </div>
+            <div class="element-card">
+              <i class="fas fa-fire"></i>
+              <h3>Fire (Agni)</h3>
+              <p>Governs energy, transformation, and clarity.</p>
+            </div>
+            <div class="element-card">
+              <i class="fas fa-wind"></i>
+              <h3>Air (Vayu)</h3>
+              <p>Controls movement, circulation, and freshness.</p>
+            </div>
+            <div class="element-card">
+              <i class="fas fa-meteor"></i>
+              <h3>Space (Akasha)</h3>
+              <p>Provides freedom, expansion, and openness.</p>
+            </div>
+          </div>
+
+          <p class="about-footer">Experience the ancient wisdom of Vastu for a balanced living environment.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-spacer"></div>
+
+    <!-- Admin Information -->
+    <section id="admin-info" class="section admin-section fade-up">
+      <div class="content-box">
+        <h2>Admin Information</h2>
+        <div class="admin-cards">
+          <div class="admin-card">
+            <i class="fas fa-envelope"></i>
+            <h3>Email</h3>
+            <p>admin@gmail.com</p>
+          </div>
+          <div class="admin-card">
+            <i class="fas fa-phone"></i>
+            <h3>Phone</h3>
+            <p>+91 **********</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-spacer"></div>
+
+    <!-- Connect Section / Professional Form -->
+    <section id="connect" class="connect-section section">
+      <div class="content-box">
+        <h2>Contact Now</h2>
+        <p class="section-description">Complete the form below for a personalized Vastu assessment</p>
+        <form id="contactForm" class="professional-form" method="POST" action="/submit" novalidate>
+          <div class="form-group">
+            <label for="name">Full Name<span class="required">*</span></label>
+            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+            <small class="error-message"></small>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address<span class="required">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+            <small class="error-message"></small>
+          </div>
+          <div class="form-group">
+            <label for="property">Property Type</label>
+            <select id="property" name="property">
+              <option value="">Select property type</option>
+              <option value="residential">Residential</option>
+              <option value="commercial">Commercial</option>
+              <option value="land">Land/Plot</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Requirements<span class="required">*</span></label>
+            <textarea id="message" name="message" rows="5" required placeholder="Describe your Vastu needs"></textarea>
+            <small class="error-message"></small>
+          </div>
+          <button type="submit" class="submit-btn">
+            <span>Request Consultation</span>
+          </button>
+          <p class="form-feedback"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Vastu Consultancy. All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+
+</body>
+</html>
